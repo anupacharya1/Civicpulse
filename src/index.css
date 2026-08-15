@@ -1,0 +1,114 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  background-color: #f4efe4;
+  background-image:
+    radial-gradient(circle at 12% 8%, rgba(79, 129, 139, 0.07), transparent 42%),
+    radial-gradient(circle at 88% 92%, rgba(223, 157, 54, 0.06), transparent 40%);
+  background-attachment: fixed;
+  color: #193539;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* serif display font for headings */
+.font-display-serif {
+  font-family: 'Lora', Georgia, serif;
+}
+
+/* thin custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #aec9cd;
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #7ea7ae;
+}
+
+/* hide scrollbar utility for horizontal scroll rows */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* line clamp helpers */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* focus ring */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid #df9d36;
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+/* form input shared style */
+.form-input {
+  width: 100%;
+  padding: 0.625rem 0.75rem;
+  border-radius: 0.75rem;
+  background-color: #f6f2ea;
+  border: 1px solid #ddd2bb;
+  font-size: 0.875rem;
+  color: #193539;
+  outline: none;
+  transition: border-color 0.2s;
+}
+.form-input:focus {
+  border-color: #4f818b;
+  background-color: #fff;
+}
+.form-input::placeholder {
+  color: #a8996f;
+}
+
+/* dark theme overrides (applied via .dark on html) */
+.dark {
+  color-scheme: dark;
+}
+.dark body {
+  background-color: #13282b;
+  color: #eef4f5;
+}
+.dark ::-webkit-scrollbar-thumb {
+  background: #27545e;
+}
